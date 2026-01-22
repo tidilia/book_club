@@ -1,0 +1,19 @@
+#Python
+backend/venv/
+*.pyc
+__pycashe__/
+db.sqlite3
+
+#Django
+backend/*.log
+backend/__pycashe__/
+backend/statisticfiles
+
+#Node / React
+frontend/node_modules/
+frontend/build
+frontend/.env
+
+# OS
+.DS_Store
+Thumbs.db
