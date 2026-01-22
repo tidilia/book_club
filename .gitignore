@@ -1,5 +1,6 @@
 #Python
 backend/venv/
+backend/.DS_Store
 *.pyc
 __pycashe__/
 db.sqlite3
