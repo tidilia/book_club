@@ -1,0 +1,9 @@
+.items-container {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;  
+    gap: 10px;               /* расстояние между кнопками */
+    padding: 20px 10px;
+}

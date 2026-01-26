@@ -8,6 +8,11 @@ class Genre(models.Model):
         return str(self.name)
     
 class Book(models.Model):
+    genre = models.ForeignKey(
+        Genre,
+        on_delete=models.PROTECT,
+        related_name="books"
+    )
     title=models.CharField(max_length=100)
     author=models.CharField(max_length=150)
     description=models.TextField(blank=True)
@@ -24,11 +29,6 @@ class MeetingType(models.Model):
         return f"{self.name} - {self.price} рублей"
 
 class Meeting(models.Model):
-    genre = models.ForeignKey(
-        Genre,
-        on_delete=models.PROTECT,
-        related_name="meetings"
-    )
     book = models.ForeignKey(
         Book,
         on_delete=models.PROTECT,

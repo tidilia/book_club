@@ -1,0 +1,22 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap&subset=cyrillic');
+
+.page-title {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;   /* Light */
+    text-align: center; /* центрируем заголовок */
+    margin: 20px 0;    /* верхний и нижний отступ */
+    color: #333;       /* цвет текста */
+}
+
+/* Пример разных размеров через тег h1, h2, h3 */
+.page-title.h1 {
+    font-size: 2.5rem;
+}
+
+.page-title.h2 {
+    font-size: 2rem;
+}
+
+.page-title.h3 {
+    font-size: 1.5rem;
+}

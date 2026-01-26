@@ -1,38 +1,51 @@
-import React, { useEffect, useState } from "react";
-import { getGenres } from "../api/meetings";
-import Button from "../components/UI/GenreButton/Button";
+import { useEffect, useState } from "react"; 
+import { GENRES_URL } from "../API";
+import { data, useNavigate } from "react-router-dom";
+import Button from "../components/UI/Button/Button";
+import ItemsList from "../components/UI/ItemsList/ItemsList";
+import PageTitle from "../components/UI/PageTitle/PageTitle";
 
-function GenresPage() {
+function GenresPage(){
   const [genres, setGenres] = useState([]);
+  const [error, setError] = useState(null);
+  const navigate = useNavigate();
 
   useEffect(() => {
-    const fetchGenres = async () => {
-      try {
-        const data = await getGenres(); // ждём данные
-        setGenres(data);                // кладём МАССИВ
-      } catch (error) {
-        console.error("Ошибка загрузки жанров:", error);
+    fetch(GENRES_URL)
+    .then((Response) => {
+      if(!Response.ok) {
+        throw new Error("Ошибка загрузки списка направлений")
       }
-    };
-
-    fetchGenres();
+      return Response.json();
+    })
+    .then((data) => {
+      setGenres(data);
+    })
+    .catch((err)=>{
+      setError(err.message);
+    });
   }, []);
+
+  if (error) return <p>Ошика: {error}</p>;
 
   return (
     <div>
-      <h1>Жанры</h1>
-
-      {genres.map((genre) => (
-        <Button
-          key={genre.id}
+      <PageTitle size="h1">Направления</PageTitle>
+      <ItemsList>
+        {genres.map((genre) => (
+          <Button
           variant="genre"
-          onClick={() => console.log("Жанр выбран:", genre.name)}
-        >
-          {genre.name}
-        </Button>
-      ))}
+          key={genre.id}
+          onClick={()=> {
+            console.log(genre.id);
+            navigate(`/genres/${genre.id}`);
+          }}>
+            {genre.name}
+          </Button>
+        ))}
+      </ItemsList>
     </div>
-  );
+  )
 }
 
 export default GenresPage;

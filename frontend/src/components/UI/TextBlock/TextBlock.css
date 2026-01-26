@@ -1,0 +1,11 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap&subset=cyrillic');
+
+.text-block {
+  padding: 20px 10px;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 300;     /* Light */
+  font-size: 16px;
+  line-height: 1.5;     /* чтобы текст хорошо читался */
+  color: #333;
+  margin: 0;            /* убираем стандартные отступы <p> */
+}

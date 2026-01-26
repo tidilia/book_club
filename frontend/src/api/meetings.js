@@ -4,7 +4,7 @@ const API_URL = "http://127.0.0.1:8000/api"
   const res = await fetch("${API_URL}/genres/");
 
   if (!res.ok) {
-    throw new Error("Ошибка загрузки жанров");
+    throw new Error("Ошибка загрузки жанров ${Error.arguments}")
   }
 
   const data = await res.json();

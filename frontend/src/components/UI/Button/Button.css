@@ -1,0 +1,23 @@
+
+.ui-button{
+    padding: 20px 10px;
+    border-radius: 15px;
+    background-color: #D2D2D2;
+    font-size: 16px;
+    font-family: 'Roboto';
+    font-weight: 300;
+    outline: none;
+    border: none;
+}
+
+.ui-button--genre{
+    width: 324px;
+}
+.ui-button:hover{
+    background-color: #3e8e41;
+}
+
+.ui-button:active{
+    background-color: cornflowerblue;
+    transform: scale(0.97);
+}
