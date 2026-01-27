@@ -1,0 +1,45 @@
+/* ===== ОСНОВНОЙ КОНТЕЙНЕР ===== */
+.home-main {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+
+.home-image img {
+    border-radius: 12px;
+    width: 200px;
+}
+
+/* ===== ОПИСАНИЕ ===== */
+.home-description {
+    width: 200px;
+}
+
+/* ========== 📱 МОБИЛКА ========== */
+@media (max-width: 768px) {
+    .home-main {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .home-image {
+        display: none;
+        /* скрываем картинку */
+    }
+
+    .home-description {
+        text-align: center;
+    }
+}
+
+.home-buttons {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
